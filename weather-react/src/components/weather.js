@@ -38,7 +38,7 @@ const Weather = () => {
                 <div className="search-box">
                     <Search setCity={setCity}/>
                 </div>
-                {weather.main ? (
+                {weather.main && (
                     <div>
                         <div className="location-box">
                             <div className="location">{weather.name}, {weather.sys.country}</div>
@@ -52,12 +52,12 @@ const Weather = () => {
                         </div>
                         <div className="map"/>
                     </div>
-                ) : ('')}
-                {errorMessage ? (
-                    <div className="alert alert-danger" role="alert">
-                         {errorMessage}
-                    </div>
-                ) : ('')}
+                )}
+                {errorMessage &&
+                <div className="alert alert-danger" role="alert">
+                    {errorMessage}
+                </div>
+                }
             </main>
         </div>
     );

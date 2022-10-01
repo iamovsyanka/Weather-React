@@ -33,11 +33,11 @@ const Search = (props) => {
             <button type="submit" className="button search-button" onClick={search}>
                 Search
             </button>
-            {errorMessage ? (
-                <div className="alert alert-danger" role="alert">
-                    {errorMessage}
-                </div>
-            ) : ('')}
+            {errorMessage &&
+            <div className="alert alert-danger" role="alert">
+                {errorMessage}
+            </div>
+            }
         </form>
     );
 }
